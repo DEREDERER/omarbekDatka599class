@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoClass - Программирование для школьников</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Хедер -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">{ }</div>
+                <div class="logo-text">
+                    <h1>InfoClass</h1>
+                    <span>Программирование для школьников</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Главная</a></li>
+                    <li><a href="2str.html">Примеры кода</a></li>
+                    <li><a href="3str.html">Сохранённое</a></li>
+                    <li><a href="4str.html" class="active">Добавить код</a></li>
+                    <li><a href="community.html">Сообщество</a></ul>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Герой секция -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Изучайте программирование с удовольствием!</h2>
+                <p>Помощь в выполнении домашних заданий по информатике для 7-9 классов с интерактивными примерами и пошаговыми решениями</p>
+                
+                <div class="hero-badges">
+                    <div class="badge">HTML/CSS</div>
+                    <div class="badge">JavaScript</div>
+                    <div class="badge">Python</div>
+                    <div class="badge">Алгоритмы</div>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Примеров кода</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">30+</div>
+                        <div class="stat-label">Практических задач</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Бесплатно</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Поиск -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Поиск по задачам, темам или коду...">
+                    <button id="searchBtn">Найти</button>
+                </div>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Задачи -->
+    <section class="tasks">
+        <div class="container">
+            <div class="section-header">
+                <h2>Задания для выполнения</h2>
+                <p>Практические задачи по программированию с готовыми примерами решений</p>
+            </div>
+            
+            <div class="task-grid">
+                <!-- Задача 1 -->
+                <div class="task-card">
+                    <h3>Создание простой веб-страницы</h3>
+                    <p>Создайте HTML-страницу с заголовком, абзацем текста и изображением.</p>
+                    
+                    <div class="code-preview">
+                        <div class="code-header">
+                            <h4>HTML</h4>
+                            <button class="copy-btn" data-code="html-basic">Копировать</button>
+                        </div>
+                        <pre><code id="html-basic">&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Моя первая страница&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Добро пожаловать на мою страницу!&lt;/h1&gt;
+    &lt;p&gt;Это моя первая веб-страница, созданная с помощью HTML.&lt;/p&gt;
+    &lt;img src="image.jpg" alt="Пример изображения" width="300"&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+                    
+                    <div class="task-meta">
+                        <span class="difficulty easy">Легко</span>
+                        <span class="subject">HTML</span>
+                    </div>
+                    
+                    <div class="task-actions">
+                        <button class="btn btn-primary save-btn" data-task="1">
+                            <span>💾</span> Сохранить задачу
+                        </button>
+                        <button class="btn btn-outline view-solution-btn" data-task="1">
+                            <span>👁️</span> Посмотреть решение
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Задача 2 -->
+                <div class="task-card">
+                    <h3>Стилизация элементов CSS</h3>
+                    <p>Создайте CSS-стили для изменения цвета текста, фона и шрифта.</p>
+                    
+                    <div class="code-preview">
+                        <div class="code-header">
+                            <h4>CSS</h4>
+                            <button class="copy-btn" data-code="css-styling">Копировать</button>
+                        </div>
+                        <pre><code id="css-styling">/* Стили для заголовка */
+h1 {
+    color: #2c3e50;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Стили для параграфа */
+p {
+    color: #34495e;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 15px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+}
+
+/* Стили для кнопки */
+.button {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}</code></pre>
+                    </div>
+                    
+                    <div class="task-meta">
+                        <span class="difficulty medium">Средне</span>
+                        <span class="subject">CSS</span>
+                    </div>
+                    
+                    <div class="task-actions">
+                        <button class="btn btn-primary save-btn" data-task="2">
+                            <span>💾</span> Сохранить задачу
+                        </button>
+                        <button class="btn btn-outline view-solution-btn" data-task="2">
+                            <span>👁️</span> Посмотреть решение
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Задача 3 -->
+                <div class="task-card">
+                    <h3>Интерактивная кнопка на JavaScript</h3>
+                    <p>Создайте кнопку, которая меняет цвет при нажатии и показывает сообщение.</p>
+                    
+                    <div class="code-preview">
+                        <div class="code-header">
+                            <h4>JavaScript</h4>
+                            <button class="copy-btn" data-code="js-button">Копировать</button>
+                        </div>
+                        <pre><code id="js-button">// Получаем элемент кнопки
+const button = document.getElementById('myButton');
+
+// Добавляем обработчик события
+button.addEventListener('click', function() {
+    // Меняем цвет кнопки
+    this.style.backgroundColor = '#e74c3c';
+    this.textContent = 'Нажато!';
+    
+    // Показываем сообщение
+    alert('Кнопка была нажата!');
+    
+    // Возвращаем исходный вид через 2 секунды
+    setTimeout(() => {
+        this.style.backgroundColor = '#3498db';
+        this.textContent = 'Нажми меня';
+    }, 2000);
+});
+
+// Дополнительно: меняем цвет при наведении
+button.addEventListener('mouseover', function() {
+    this.style.transform = 'scale(1.05)';
+});
+
+button.addEventListener('mouseout', function() {
+    this.style.transform = 'scale(1)';
+});</code></pre>
+                    </div>
+                    
+                    <div class="task-meta">
+                        <span class="difficulty medium">Средне</span>
+                        <span class="subject">JavaScript</span>
+                    </div>
+                    
+                    <div class="task-actions">
+                        <button class="btn btn-primary save-btn" data-task="3">
+                            <span>💾</span> Сохранить задачу
+                        </button>
+                        <button class="btn btn-outline view-solution-btn" data-task="3">
+                            <span>👁️</span> Посмотреть решение
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Задача 4 -->
+                <div class="task-card">
+                    <h3>Простой калькулятор</h3>
+                    <p>Создайте калькулятор, выполняющий основные арифметические операции.</p>
+                    
+                    <div class="code-preview">
+                        <div class="code-header">
+                            <h4>JavaScript Calculator</h4>
+                            <button class="copy-btn" data-code="js-calculator">Копировать</button>
+                        </div>
+                        <pre><code id="js-calculator">// Функция сложения
+function add(a, b) {
+    return a + b;
+}
+
+// Функция вычитания
+function subtract(a, b) {
+    return a - b;
+}
+
+// Функция умножения
+function multiply(a, b) {
+    return a * b;
+}
+
+// Функция деления
+function divide(a, b) {
+    if (b === 0) {
+        return 'Ошибка: деление на ноль!';
+    }
+    return a / b;
+}
+
+// Основная функция калькулятора
+function calculate(operation, a, b) {
+    switch(operation) {
+        case '+':
+            return add(a, b);
+        case '-':
+            return subtract(a, b);
+        case '*':
+            return multiply(a, b);
+        case '/':
+            return divide(a, b);
+        default:
+            return 'Неизвестная операция';
+    }
+}
+
+// Пример использования
+console.log(calculate('+', 5, 3)); // 8
+console.log(calculate('*', 4, 7)); // 28</code></pre>
+                    </div>
+                    
+                    <div class="task-meta">
+                        <span class="difficulty hard">Сложно</span>
+                        <span class="subject">JavaScript</span>
+                    </div>
+                    
+                    <div class="task-actions">
+                        <button class="btn btn-primary save-btn" data-task="4">
+                            <span>💾</span> Сохранить задачу
+                        </button>
+                        <button class="btn btn-outline view-solution-btn" data-task="4">
+                            <span>👁️</span> Посмотреть решение
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Задача 5 -->
+                <div class="task-card">
+                    <h3>Анимация движения</h3>
+                    <p>Создайте анимацию перемещения элемента по экрану с изменением цвета.</p>
+                    
+                    <div class="code-preview">
+                        <div class="code-header">
+                            <h4>CSS Animation</h4>
+                            <button class="copy-btn" data-code="css-animation">Копировать</button>
+                        </div>
+                        <pre><code id="css-animation">.animated-box {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, #3498db, #9b59b6);
+    border-radius: 10px;
+    animation: moveAndChange 4s ease-in-out infinite;
+    position: relative;
+}
+
+@keyframes moveAndChange {
+    0% {
+        left: 0;
+        top: 0;
+        transform: rotate(0deg);
+        background: linear-gradient(45deg, #3498db, #9b59b6);
+    }
+    25% {
+        left: 200px;
+        top: 0;
+        transform: rotate(90deg);
+        background: linear-gradient(45deg, #2ecc71, #3498db);
+    }
+    50% {
+        left: 200px;
+        top: 200px;
+        transform: rotate(180deg);
+        background: linear-gradient(45deg, #e74c3c, #2ecc71);
+    }
+    75% {
+        left: 0;
+        top: 200px;
+        transform: rotate(270deg);
+        background: linear-gradient(45deg, #f39c12, #e74c3c);
+    }
+    100% {
+        left: 0;
+        top: 0;
+        transform: rotate(360deg);
+        background: linear-gradient(45deg, #3498db, #9b59b6);
+    }
+}
+
+/* Добавляем тень для глубины */
+.animated-box::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.1);
+    border-radius: 10px;
+    filter: blur(10px);
+    z-index: -1;
+}</code></pre>
+                    </div>
+                    
+                    <div class="task-meta">
+                        <span class="difficulty hard">Сложно</span>
+                        <span class="subject">CSS/JS</span>
+                    </div>
+                    
+                    <div class="task-actions">
+                        <button class="btn btn-primary save-btn" data-task="5">
+                            <span>💾</span> Сохранить задачу
+                        </button>
+                        <button class="btn btn-outline view-solution-btn" data-task="5">
+                            <span>👁️</span> Посмотреть решение
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Задача 6 -->
+                <div class="task-card">
+                    <h3>Валидация формы</h3>
+                    <p>Создайте форму с проверкой введённых данных перед отправкой.</p>
+                    
+                    <div class="code-preview">
+                        <div class="code-header">
+                            <h4>Form Validation</h4>
+                            <button class="copy-btn" data-code="form-validation">Копировать</button>
+                        </div>
+                        <pre><code id="form-validation">// Функция валидации email
+function validateEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}
+
+// Функция валидации пароля
+function validatePassword(password) {
+    return password.length >= 8;
+}
+
+// Основная функция валидации формы
+function validateForm(event) {
+    event.preventDefault();
+    
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const errorDiv = document.getElementById('error-message');
+    
+    // Очищаем предыдущие ошибки
+    errorDiv.innerHTML = '';
+    
+    let isValid = true;
+    let errors = [];
+    
+    // Проверяем email
+    if (!validateEmail(email)) {
+        isValid = false;
+        errors.push('Введите корректный email адрес');
+    }
+    
+    // Проверяем пароль
+    if (!validatePassword(password)) {
+        isValid = false;
+        errors.push('Пароль должен содержать минимум 8 символов');
+    }
+    
+    // Показываем ошибки или отправляем форму
+    if (!isValid) {
+        errorDiv.innerHTML = errors.join('&lt;br&gt;');
+        errorDiv.style.color = '#e74c3c';
+    } else {
+        errorDiv.innerHTML = 'Форма успешно отправлена!';
+        errorDiv.style.color = '#27ae60';
+        // Здесь можно отправить форму на сервер
+    }
+}
+
+// Добавляем обработчик к форме
+document.getElementById('myForm').addEventListener('submit', validateForm);</code></pre>
+                    </div>
+                    
+                    <div class="task-meta">
+                        <span class="difficulty medium">Средне</span>
+                        <span class="subject">JavaScript</span>
+                    </div>
+                    
+                    <div class="task-actions">
+                        <button class="btn btn-primary save-btn" data-task="6">
+                            <span>💾</span> Сохранить задачу
+                        </button>
+                        <button class="btn btn-outline view-solution-btn" data-task="6">
+                            <span>👁️</span> Посмотреть решение
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ресурсы -->
+<section class="resources">
+    <div class="container">
+        <div class="section-header">
+            <h2>Полезные ресурсы</h2>
+            <p>Интерактивные материалы для углубленного изучения программирования</p>
+        </div>
+        
+        <div class="resources-grid">
+            <div class="resource-card">
+                <div class="resource-icon floating">📚</div>
+                <h3>HTML справочник</h3>
+                <p>Полный справочник по HTML тегам и атрибутам с интерактивными примерами</p>
+                <a href="https://youtu.be/HRkQ4C7MoOM" target="_blank" class="resource-link">
+                    Изучать 
+                    <span>→</span>
+                </a>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon floating">🎨</div>
+                <h3>CSS руководство</h3>
+                <p>Основы и продвинутые техники CSS с анимациями и практическими заданиями</p>
+                <a href="https://youtu.be/mA6EaGs6rak" target="_blank" class="resource-link">
+                    Изучать 
+                    <span>→</span>
+                </a>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon floating">⚡</div>
+                <h3>JavaScript учебник</h3>
+                <p>Интерактивное изучение JavaScript с нуля до продвинутого уровня</p>
+                <a href="https://www.youtube.com/@itproger" target="_blank" class="resource-link">
+                    Изучать 
+                    <span>→</span>
+                </a>
+            </div>
+            
+            <div class="resource-card">
+                <div class="resource-icon floating">🔍</div>
+                <h3>Алгоритмы</h3>
+                <p>Визуализация основных алгоритмов и структур данных с примерами</p>
+                <a href="https://youtu.be/JaLste-woaE" target="_blank" class="resource-link">
+                    Изучать 
+                    <span>→</span>
+                </a>
+
+            <!-- Пагинация
+<section class="pagination-section">
+    <div class="container">
+        <div class="pagination">
+            <a href="index.html" class="page-btn active">1</a>
+            <a href="2str.html" class="page-btn">2</a>
+            <a href="3str.html" class="page-btn">3</a>
+            <a href="4str.html" class="page-btn">4</a>
+            <a href="community.html" class="page-btn">5</a>
+        </div>
+        <div class="pagination-labels">
+            <span>Главная</span>
+            <span>Примеры кода</span>
+            <span>Сохранённое</span>
+            <span>Добавить код</span>
+            <span>Сообщество</span>
+        </div>
+    </div>
+</section> -->
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="logo">
+                        <div class="logo-icon">{ }</div>
+                        <div class="logo-text">
+                            <h1>InfoClass</h1>
+                            <span>Программирование для школьников</span>
+                        </div>
+                    </div>
+                    <p>Помощь в изучении программирования для учащихся 7-9 классов</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="index.html">Главная</a>
+                    <a href="2str.html">Примеры кода</a>
+                    <a href="3str.html">Сохранённое</a>
+                    <a href="admin.html" style="opacity: 0.3;">Админка</a>
+                    <a href="#">О проекте</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 InfoClass - Программирование для школьников. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно для решений -->
+    <div id="solutionModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalBody">
+                <!-- Контент будет добавляться через JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <div class="table-container">
+    <table>
+        <tr>
+            <td>HTML/CSS</td>
+            <td>JavaScript</td>
+        </tr>
+        <tr>
+            <td>Python</td>
+            <td>Алгоритмы</td>
+        </tr>
+    </table>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

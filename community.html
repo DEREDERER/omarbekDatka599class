@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сообщество - InfoClass</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">{ }</div>
+                <div class="logo-text">
+                    <h1>InfoClass</h1>
+                    <span>Программирование для школьников</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="2str.html">Примеры кода</a></li>
+                    <li><a href="3str.html">Сохранённое</a></li>
+                    <li><a href="4str.html">Добавить код</a></li>
+                    <li><a href="community.html" class="active">Сообщество</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="community-hero">
+        <div class="container">
+            <h2>Сообщество программистов</h2>
+            <p>Смотрите работы других школьников, вдохновляйтесь и учитесь вместе!</p>
+        </div>
+    </section>
+
+    <section class="community-content">
+        <div class="container">
+            <div class="community-stats">
+                <div class="community-stat">
+                    <div class="stat-number" id="totalCodes">0</div>
+                    <div class="stat-label">Всего кодов</div>
+                </div>
+                <div class="community-stat">
+                    <div class="stat-number" id="totalAuthors">0</div>
+                    <div class="stat-label">Участников</div>
+                </div>
+                <div class="community-stat">
+                    <div class="stat-number" id="totalLikes">0</div>
+                    <div class="stat-label">Лайков</div>
+                </div>
+            </div>
+
+            <div class="community-filters">
+                <div class="filter-group">
+                    <label>Сортировка:</label>
+                    <select id="communitySort">
+                        <option value="newest">Сначала новые</option>
+                        <option value="popular">По популярности</option>
+                        <option value="difficulty">По сложности</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Язык:</label>
+                    <select id="communityLanguage">
+                        <option value="all">Все языки</option>
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Сложность:</label>
+                    <select id="communityDifficulty">
+                        <option value="all">Любая</option>
+                        <option value="easy">👶 Легко</option>
+                        <option value="medium">👍 Средне</option>
+                        <option value="hard">🔥 Сложно</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="communityFeed" class="community-feed">
+                <!-- Коды сообщества будут загружаться здесь -->
+            </div>
+
+            <div id="communityEmpty" class="empty-state">
+                <h3>Сообщество пока пустое</h3>
+                <p>Будьте первым, кто добавит свой код и вдохновит других!</p>
+                <a href="4str.html" class="btn btn-primary">
+                    <span>🚀</span> Добавить свой код
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="logo">
+                        <div class="logo-icon">{ }</div>
+                        <div class="logo-text">
+                            <h1>InfoClass</h1>
+                            <span>Программирование для школьников</span>
+                        </div>
+                    </div>
+                    <p>Помощь в изучении программирования для учащихся 7-9 классов</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="index.html">Главная</a>
+                    <a href="2str.html">Примеры кода</a>
+                    <a href="3str.html">Сохранённое</a>
+                    <a href="4str.html">Добавить код</a>
+                    <a href="community.html">Сообщество</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 InfoClass - Программирование для школьников. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="table-container">
+    <table>
+        <tr>
+            <td>HTML/CSS</td>
+            <td>JavaScript</td>
+        </tr>
+        <tr>
+            <td>Python</td>
+            <td>Алгоритмы</td>
+        </tr>
+    </table>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

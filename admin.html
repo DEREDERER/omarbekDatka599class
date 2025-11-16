@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ-панель - InfoClass</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">{ }</div>
+                <div class="logo-text">
+                    <h1>InfoClass Admin</h1>
+                    <span>Панель управления</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">← На сайт</a></li>
+                    <li><a href="#" id="logoutBtn">Выйти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="admin-hero">
+        <div class="container">
+            <h2>Панель администратора</h2>
+            <p>Управление контентом сайта InfoClass</p>
+        </div>
+    </section>
+
+    <!-- Форма входа -->
+    <section id="loginSection" class="admin-login">
+        <div class="container">
+            <div class="login-form">
+                <h3>Вход в админ-панель</h3>
+                <div class="form-group">
+                    <input type="password" id="adminPassword" placeholder="Введите пароль администратора">
+                </div>
+                <button id="loginBtn" class="btn btn-primary btn-large">Войти</button>
+                <p class="login-hint">Пароль известен только создателю сайта</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Админ-панель (скрыта до входа) -->
+    <section id="adminPanel" class="admin-panel" style="display: none;">
+        <div class="container">
+            <div class="admin-stats">
+                <div class="admin-stat">
+                    <div class="stat-number" id="totalTasks">0</div>
+                    <div class="stat-label">Всего задач</div>
+                </div>
+                <div class="admin-stat">
+                    <div class="stat-number" id="totalCodes">0</div>
+                    <div class="stat-label">Кодов в сообществе</div>
+                </div>
+                <div class="admin-stat">
+                    <div class="stat-number" id="totalUsers">0</div>
+                    <div class="stat-label">Уникальных авторов</div>
+                </div>
+            </div>
+
+            <div class="admin-tabs">
+                <button class="admin-tab-btn active" data-tab="tasks">Управление задачами</button>
+                <button class="admin-tab-btn" data-tab="community">Управление сообществом</button>
+                <button class="admin-tab-btn" data-tab="settings">Настройки</button>
+            </div>
+
+            <!-- Вкладка управления задачами -->
+            <div id="tasksTab" class="admin-tab-content active">
+                <div class="admin-section-header">
+                    <h3>Управление задачами</h3>
+                    <button id="addTaskBtn" class="btn btn-primary">+ Добавить задачу</button>
+                </div>
+                
+                <div class="tasks-list" id="adminTasksList">
+                    <!-- Задачи будут загружаться здесь -->
+                </div>
+            </div>
+
+            <!-- Вкладка управления сообществом -->
+            <div id="communityTab" class="admin-tab-content">
+                <div class="admin-section-header">
+                    <h3>Управление сообществом</h3>
+                    <div class="admin-actions">
+                        <button id="refreshCodesBtn" class="btn btn-outline">🔄 Обновить</button>
+                    </div>
+                </div>
+                
+                <div class="community-codes-list" id="adminCodesList">
+                    <!-- Коды сообщества будут здесь -->
+                </div>
+            </div>
+
+            <!-- Вкладка настроек -->
+            <div id="settingsTab" class="admin-tab-content">
+                <div class="admin-section-header">
+                    <h3>Настройки системы</h3>
+                </div>
+                
+                <div class="settings-grid">
+                    <div class="setting-card">
+                        <h4>Сброс данных</h4>
+                        <p>Очистка всех пользовательских данных</p>
+                        <button id="resetDataBtn" class="btn btn-danger">🗑️ Сбросить все данные</button>
+                    </div>
+                    
+                    <div class="setting-card">
+                        <h4>Экспорт данных</h4>
+                        <p>Скачать резервную копию всех данных</p>
+                        <button id="exportDataBtn" class="btn btn-outline">📥 Экспорт данных</button>
+                    </div>
+                    
+                    <div class="setting-card">
+                        <h4>Статистика</h4>
+                        <p>Просмотр аналитики сайта</p>
+                        <button id="viewStatsBtn" class="btn btn-outline">📊 Показать статистику</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модальное окно добавления/редактирования задачи -->
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="taskModalBody">
+                <!-- Контент модального окна -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Примеры кода - InfoClass</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">{ }</div>
+                <div class="logo-text">
+                    <h1>InfoClass</h1>
+                    <span>Программирование для школьников</span>
+                </div>
+            </div>
+            <nav>
+    <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="2str.html">Примеры кода</a></li>
+        <li><a href="3str.html">Сохранённое</a></li>
+        <li><a href="4str.html">Добавить код</a></li>
+        <li><a href="community.html">Сообщество</a></li>
+    </ul>
+</nav>
+        </div>
+    </header>
+
+    <section class="examples-hero">
+        <div class="container">
+            <h2>Примеры кода для изучения</h2>
+            <p>Готовые решения для ваших проектов по программированию</p>
+        </div>
+    </section>
+
+    <section class="examples">
+        <div class="container">
+            <div class="examples-grid">
+                <!-- Пример 1 - Анимация -->
+                <div class="example-card">
+                    <h3>1. Создание анимации на CSS</h3>
+                    <p>Анимация позволяет элементам плавно изменять свои свойства со временем. В этом примере мы создадим анимированный квадрат, который меняет цвет и перемещается.</p>
+                    
+                    <div class="example-code-preview">
+                        <div class="code-header">
+                            <h4>HTML + CSS</h4>
+                            <button class="copy-btn" data-code="animation-code">Копировать</button>
+                        </div>
+                        <pre><code id="animation-code">&lt;!-- HTML --&gt;
+&lt;div class="animated-box"&gt;Анимированный элемент&lt;/div&gt;
+
+/* CSS */
+.animated-box {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    animation: moveAndChange 3s infinite alternate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+@keyframes moveAndChange {
+    0% {
+        transform: translateX(0);
+        background-color: #3498db;
+    }
+    100% {
+        transform: translateX(200px);
+        background-color: #e74c3c;
+    }
+}</code></pre>
+                    </div>
+                    
+                    <div class="demo-area">
+                        <div class="animated-box-demo">Анимированный элемент</div>
+                    </div>
+                    
+                    <div class="example-actions">
+                        <button class="btn btn-primary save-code-btn" data-example="1">
+                            <span>💾</span> Сохранить код
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Пример 2 - Тени -->
+                <div class="example-card">
+                    <h3>2. Создание теней для элементов</h3>
+                    <p>Тени придают элементам глубину и делают интерфейс более привлекательным. CSS свойство box-shadow позволяет легко добавлять тени.</p>
+                    
+                    <div class="example-code-preview">
+                        <div class="code-header">
+                            <h4>CSS</h4>
+                            <button class="copy-btn" data-code="shadow-code">Копировать</button>
+                        </div>
+                        <pre><code id="shadow-code">.shadow-box {
+    width: 200px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1), 
+                0 6px 20px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+/* Разные варианты теней */
+.shadow-small {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.shadow-large {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.shadow-inset {
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}</code></pre>
+                    </div>
+                    
+                    <div class="demo-area">
+                        <div class="shadow-box-demo">Элемент с тенью</div>
+                    </div>
+                    
+                    <div class="example-actions">
+                        <button class="btn btn-primary save-code-btn" data-example="2">
+                            <span>💾</span> Сохранить код
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Пример 3 - Кнопка -->
+                <div class="example-card">
+                    <h3>3. Создание интерактивной кнопки</h3>
+                    <p>Кнопки - важный элемент интерфейса. В этом примере мы создадим красивую кнопку с эффектами при наведении и нажатии.</p>
+                    
+                    <div class="example-code-preview">
+                        <div class="code-header">
+                            <h4>HTML + CSS</h4>
+                            <button class="copy-btn" data-code="button-code">Копировать</button>
+                        </div>
+                        <pre><code id="button-code">&lt;!-- HTML --&gt;
+&lt;button class="custom-btn"&gt;Нажми меня&lt;/button&gt;
+
+/* CSS */
+.custom-btn {
+    background: linear-gradient(to right, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.custom-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+
+.custom-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.custom-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}</code></pre>
+                    </div>
+                    
+                    <div class="demo-area">
+                        <button class="custom-btn-demo">Нажми меня</button>
+                    </div>
+                    
+                    <div class="example-actions">
+                        <button class="btn btn-primary save-code-btn" data-example="3">
+                            <span>💾</span> Сохранить код
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Пример 4 - Блок с изображением -->
+                <div class="example-card">
+                    <h3>4. Создание блока с изображением</h3>
+                    <p>Классы в CSS позволяют переиспользовать стили. В этом примере мы создадим класс .image-box для оформления блоков с изображениями.</p>
+                    
+                    <div class="example-code-preview">
+                        <div class="code-header">
+                            <h4>HTML + CSS</h4>
+                            <button class="copy-btn" data-code="image-box-code">Копировать</button>
+                        </div>
+                        <pre><code id="image-box-code">&lt;!-- HTML --&gt;
+&lt;div class="image-box"&gt;
+    &lt;img src="image.jpg" alt="Пример изображения"&gt;
+    &lt;div class="image-caption"&gt;Подпись к изображению&lt;/div&gt;
+&lt;/div&gt;
+
+/* CSS */
+.image-box {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.image-box:hover img {
+    transform: scale(1.05);
+}
+
+.image-caption {
+    padding: 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+    font-style: italic;
+    border-top: 1px solid #ddd;
+}</code></pre>
+                    </div>
+                    
+                    <div class="demo-area">
+                        <div class="image-box-demo">
+                            <div class="placeholder-img">Изображение</div>
+                            <div class="image-caption">Подпись к изображению</div>
+                        </div>
+                    </div>
+                    
+                    <div class="example-actions">
+                        <button class="btn btn-primary save-code-btn" data-example="4">
+                            <span>💾</span> Сохранить код
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Пример 5 - Навигация -->
+                <div class="example-card">
+                    <h3>5. Создание навигационного меню</h3>
+                    <p>Навигационное меню - важный элемент любого сайта. В этом примере мы создадим горизонтальное меню с плавными переходами.</p>
+                    
+                    <div class="example-code-preview">
+                        <div class="code-header">
+                            <h4>HTML + CSS</h4>
+                            <button class="copy-btn" data-code="nav-code">Копировать</button>
+                        </div>
+                        <pre><code id="nav-code">&lt;!-- HTML --&gt;
+&lt;nav class="main-nav"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Главная&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;О нас&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Услуги&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Контакты&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+/* CSS */
+.main-nav {
+    background-color: #2c3e50;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav li {
+    flex: 1;
+}
+
+.main-nav a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.main-nav a:hover {
+    background-color: #34495e;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #3498db;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.main-nav a:hover::after {
+    width: 80%;
+}</code></pre>
+                    </div>
+                    
+                    <div class="demo-area">
+                        <nav class="main-nav-demo">
+                            <ul>
+                                <li><a href="#">Главная</a></li>
+                                <li><a href="#">О нас</a></li>
+                                <li><a href="#">Услуги</a></li>
+                                <li><a href="#">Контакты</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    
+                    <div class="example-actions">
+                        <button class="btn btn-primary save-code-btn" data-example="5">
+                            <span>💾</span> Сохранить код
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Пример 6 - Модальное окно -->
+                <div class="example-card">
+                    <h3>6. Создание модального окна</h3>
+                    <p>Модальные окна используются для отображения дополнительной информации без перехода на другую страницу.</p>
+                    
+                    <div class="example-code-preview">
+                        <div class="code-header">
+                            <h4>HTML + CSS + JS</h4>
+                            <button class="copy-btn" data-code="modal-code">Копировать</button>
+                        </div>
+                        <pre><code id="modal-code">&lt;!-- HTML --&gt;
+&lt;button id="openModal"&gt;Открыть окно&lt;/button&gt;
+
+&lt;div id="myModal" class="modal"&gt;
+    &lt;div class="modal-content"&gt;
+        &lt;span class="close"&gt;&times;&lt;/span&gt;
+        &lt;h2&gt;Заголовок модального окна&lt;/h2&gt;
+        &lt;p&gt;Это содержимое модального окна.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+/* CSS */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+// JavaScript
+const modal = document.getElementById('myModal');
+const btn = document.getElementById('openModal');
+const span = document.getElementsByClassName('close')[0];
+
+btn.onclick = function() {
+    modal.style.display = 'block';
+}
+
+span.onclick = function() {
+    modal.style.display = 'none';
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}</code></pre>
+                    </div>
+                    
+                    <div class="demo-area">
+                        <button id="openModalDemo">Открыть окно</button>
+                        <div id="myModalDemo" class="modal-demo">
+                            <div class="modal-content-demo">
+                                <span class="close-demo">&times;</span>
+                                <h2>Заголовок модального окна</h2>
+                                <p>Это содержимое модального окна.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="example-actions">
+                        <button class="btn btn-primary save-code-btn" data-example="6">
+                            <span>💾</span> Сохранить код
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="logo">
+                        <div class="logo-icon">{ }</div>
+                        <div class="logo-text">
+                            <h1>InfoClass</h1>
+                            <span>Программирование для школьников</span>
+                        </div>
+                    </div>
+                    <p>Помощь в изучении программирования для учащихся 7-9 классов</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="index.html">Главная</a>
+                    <a href="2str.html">Примеры кода</a>
+                    <a href="3str.html">Сохранённое</a>
+                    <a href="#">О проекте</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 InfoClass - Программирование для школьников. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="table-container">
+    <table>
+        <tr>
+            <td>HTML/CSS</td>
+            <td>JavaScript</td>
+        </tr>
+        <tr>
+            <td>Python</td>
+            <td>Алгоритмы</td>
+        </tr>
+    </table>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сохранённое - InfoClass</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">{ }</div>
+                <div class="logo-text">
+                    <h1>InfoClass</h1>
+                    <span>Программирование для школьников</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="2str.html">Примеры кода</a></li>
+                    <li><a href="3str.html" class="active">Сохранённое</a></li>
+                    <li><a href="4str.html">Добавить код</a></li>
+                    <li><a href="community.html">Сообщество</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="saved-hero">
+        <div class="container">
+            <h2>Сохранённые материалы</h2>
+            <p>Здесь собраны все задачи и примеры кода, которые вы сохранили для изучения</p>
+        </div>
+    </section>
+
+    <section class="saved-content">
+        <div class="container">
+            <div class="saved-tabs">
+                <button class="tab-btn active" data-tab="tasks">Сохранённые задачи</button>
+                <button class="tab-btn" data-tab="examples">Сохранённые примеры</button>
+            </div>
+
+            <div id="tasks-tab" class="tab-content active">
+                <h3>Сохранённые задачи</h3>
+                <div id="saved-tasks-list" class="saved-grid">
+                    <!-- Сохранённые задачи будут загружаться здесь -->
+                </div>
+                
+                <div id="tasks-empty" class="empty-state">
+                    <h3>Пока нет сохранённых задач</h3>
+                    <p>Перейдите на главную страницу, чтобы сохранить интересующие вас задачи.</p>
+                    <a href="index.html" class="btn btn-primary">
+                        <span>📚</span> Перейти к задачам
+                    </a>
+                </div>
+            </div>
+
+            <div id="examples-tab" class="tab-content">
+                <h3>Сохранённые примеры кода</h3>
+                <div id="saved-examples-list" class="saved-grid">
+                    <!-- Сохранённые примеры будут загружаться здесь -->
+                </div>
+                
+                <div id="examples-empty" class="empty-state">
+                    <h3>Пока нет сохранённых примеров</h3>
+                    <p>Перейдите на страницу с примерами кода, чтобы сохранить полезные примеры.</p>
+                    <a href="2str.html" class="btn btn-primary">
+                        <span>💻</span> Перейти к примерам
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="logo">
+                        <div class="logo-icon">{ }</div>
+                        <div class="logo-text">
+                            <h1>InfoClass</h1>
+                            <span>Программирование для школьников</span>
+                        </div>
+                    </div>
+                    <p>Помощь в изучении программирования для учащихся 7-9 классов</p>
+                </div>
+                
+               <nav>
+    <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="2str.html">Примеры кода</a></li>
+        <li><a href="3str.html">Сохранённое</a></li>
+        <li><a href="4str.html">Добавить код</a></li>
+        <li><a href="community.html">Сообщество</a></li>
+    </ul>
+</nav>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 InfoClass - Программирование для школьников. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="table-container">
+    <table>
+        <tr>
+            <td>HTML/CSS</td>
+            <td>JavaScript</td>
+        </tr>
+        <tr>
+            <td>Python</td>
+            <td>Алгоритмы</td>
+        </tr>
+    </table>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

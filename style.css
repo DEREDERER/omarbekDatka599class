@@ -1,0 +1,3382 @@
+/* Современные стили 2025 */
+:root {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --secondary: #10b981;
+  --accent: #f59e0b;
+  --dark: #1f2937;
+  --darker: #111827;
+  --light: #f8fafc;
+  --gray: #6b7280;
+  --gradient: linear-gradient(135deg, #6366f1, #8b5cf6);
+  --gradient-2: linear-gradient(135deg, #10b981, #059669);
+  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 50px -12px rgba(0, 0, 0, 0.25);
+  --radius: 12px;
+  --radius-lg: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.7;
+  color: var(--dark);
+  background: var(--light);
+  overflow-x: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Современный хедер */
+header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--gradient);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.logo-text h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo-text span {
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+nav a:hover {
+  color: var(--primary);
+  background: rgba(99, 102, 241, 0.1);
+}
+
+nav a.active {
+  color: var(--primary);
+  background: rgba(99, 102, 241, 0.1);
+}
+
+nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 1rem;
+  right: 1rem;
+  height: 2px;
+  background: var(--gradient);
+  border-radius: 2px;
+}
+
+/* Современный герой */
+.hero {
+  background: linear-gradient(135deg, var(--darker) 0%, #374151 100%);
+  color: white;
+  padding: 140px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero h2 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #fff 0%, #e5e7eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: #d1d5db;
+  margin-bottom: 2rem;
+}
+
+.hero-badges {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.badge:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Статистика в герое */
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff, #e5e7eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Поиск в современном стиле */
+.search-section {
+  padding: 3rem 0;
+  background: white;
+}
+
+.search-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.search-box:focus-within {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.search-box input {
+  flex: 1;
+  padding: 1.25rem 1.5rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: transparent;
+}
+
+.search-box button {
+  background: var(--gradient);
+  color: white;
+  border: none;
+  padding: 0 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.search-box button:hover {
+  background: var(--primary-dark);
+}
+
+/* Современные карточки задач */
+.tasks {
+  padding: 4rem 0;
+  background: #f8fafc;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--darker);
+}
+
+.section-header p {
+  font-size: 1.125rem;
+  color: var(--gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+}
+
+.task-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+
+.task-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--gradient);
+  transition: width 0.3s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.task-card:hover::before {
+  width: 6px;
+}
+
+.task-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--darker);
+}
+
+.task-card p {
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.task-meta {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.difficulty {
+  padding: 0.375rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.difficulty.easy {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--secondary);
+}
+
+.difficulty.medium {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--accent);
+}
+
+.difficulty.hard {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.subject {
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--primary);
+  padding: 0.375rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Единый стиль для блоков кода */
+.code-preview {
+  background: #1f2937;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  overflow: hidden;
+  position: relative;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.code-preview pre {
+  color: #e5e7eb;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+  flex-grow: 1;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+.code-header h4 {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.copy-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #9ca3af;
+  border: none;
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: var(--gradient);
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* Анимированные ресурсы */
+.resources {
+  padding: 4rem 0;
+  background: white;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.resource-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.resource-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient);
+  opacity: 0.1;
+  transition: left 0.6s ease;
+}
+
+.resource-card:hover::before {
+  left: 0;
+}
+
+.resource-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+.resource-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: var(--gradient);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.resource-card:hover .resource-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.resource-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--darker);
+}
+
+.resource-card p {
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.resource-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.resource-link:hover {
+  gap: 0.75rem;
+  color: var(--primary-dark);
+}
+
+/* Футер */
+footer {
+  background: var(--darker);
+  color: white;
+  padding: 3rem 0 1rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.footer-info .logo {
+  margin-bottom: 1rem;
+}
+
+.footer-info p {
+  color: #9ca3af;
+  max-width: 300px;
+  line-height: 1.6;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid #374151;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* Модальное окно */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 2% auto;
+  padding: 0;
+  border-radius: var(--radius-lg);
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+  color: #000;
+}
+
+#modalBody {
+  padding: 3rem 2rem 2rem;
+}
+
+.modal-solution {
+  line-height: 1.7;
+}
+
+.modal-solution h2 {
+  color: var(--darker);
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+}
+
+.modal-solution h3 {
+  color: var(--primary);
+  margin: 1.5rem 0 1rem;
+  font-size: 1.25rem;
+}
+
+.modal-solution p {
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+.modal-solution ul, .modal-solution ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.modal-solution li {
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+.modal-solution code {
+  background: #f1f5f9;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.875rem;
+  color: var(--primary-dark);
+}
+
+.modal-solution pre {
+  background: #1f2937;
+  color: #e5e7eb;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Анимации */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(99, 102, 241, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+.task-card, .resource-card {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.btn-primary {
+  animation: pulse 2s infinite;
+}
+
+.btn-primary:hover {
+  animation: none;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-stats {
+    gap: 1.5rem;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  
+  .task-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  nav ul {
+    gap: 1rem;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .footer-info p {
+    max-width: none;
+    margin: 0 auto;
+  }
+  
+  .footer-links {
+    justify-content: center;
+  }
+  
+  .task-actions {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+  
+  .modal-content {
+    width: 95%;
+    margin: 5% auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 120px 0 60px;
+  }
+  
+  .hero h2 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  
+  .task-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Добавьте эти стили в существующий CSS */
+
+/* Фиксированные размеры для карточек задач */
+.task-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.task-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 550px; /* Фиксированная минимальная высота */
+    max-height: 550px; /* Фиксированная максимальная высота */
+}
+
+/* Фиксированные размеры для блоков кода */
+.code-preview {
+    background: #1f2937;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    overflow: hidden;
+    position: relative;
+    min-height: 180px; /* Фиксированная высота */
+    max-height: 180px; /* Фиксированная высота */
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.code-preview pre {
+    color: #e5e7eb;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.8rem; /* Чуть меньше шрифт */
+    line-height: 1.4;
+    margin: 0;
+    flex-grow: 1;
+    overflow-x: auto;
+    overflow-y: auto; /* Добавляем вертикальную прокрутку */
+    white-space: pre;
+}
+
+/* Стили для страницы примеров кода */
+.examples-hero {
+    background: linear-gradient(135deg, var(--darker) 0%, #374151 100%);
+    color: white;
+    padding: 140px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.examples-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+}
+
+.examples-hero .container {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.examples-hero h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #fff 0%, #e5e7eb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.examples-hero p {
+    font-size: 1.25rem;
+    color: #d1d5db;
+}
+
+/* Карточки примеров кода */
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    padding: 3rem 0;
+}
+
+.example-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 550px; /* Фиксированная высота */
+    max-height: 650px; /* Фиксированная высота */
+}
+
+.example-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--gradient);
+    transition: width 0.3s ease;
+}
+
+.example-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.example-card:hover::before {
+    width: 6px;
+}
+
+.example-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--darker);
+    flex-shrink: 0;
+}
+
+.example-card p {
+    color: var(--gray);
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+}
+
+.example-code-preview {
+    background: #1f2937;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    overflow: hidden;
+    position: relative;
+    min-height: 200px; /* Фиксированная высота для примеров */
+    max-height: 200px; /* Фиксированная высота для примеров */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.example-code-preview pre {
+    color: #e5e7eb;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin: 0;
+    flex-grow: 1;
+    overflow-x: auto;
+    overflow-y: auto;
+    white-space: pre;
+}
+
+.example-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
+/* Стили для страницы сохраненных материалов */
+.saved-hero {
+    background: linear-gradient(135deg, var(--darker) 0%, #374151 100%);
+    color: white;
+    padding: 140px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.saved-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+}
+
+.saved-hero .container {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.saved-hero h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #fff 0%, #e5e7eb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.saved-hero p {
+    font-size: 1.25rem;
+    color: #d1d5db;
+}
+
+/* Табы для сохраненных материалов */
+.saved-tabs {
+    display: flex;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #e5e7eb;
+    background: white;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    padding: 0 2rem;
+    gap: 0;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 1.25rem 2rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gray);
+    position: relative;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-btn:hover {
+    color: var(--primary);
+    background: rgba(99, 102, 241, 0.05);
+}
+
+.tab-btn.active {
+    color: var(--primary);
+    border-bottom: 3px solid var(--primary);
+}
+
+.tab-content {
+    display: none;
+    padding: 2rem;
+    background: white;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    min-height: 400px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Сетка для сохраненных элементов */
+.saved-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.saved-item {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+    max-height: 200px;
+    transition: all 0.3s ease;
+}
+
+.saved-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.saved-item h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--darker);
+    padding-right: 2rem;
+}
+
+.saved-item p {
+    color: var(--gray);
+    margin-bottom: 1rem;
+    flex-grow: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.remove-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 1.125rem;
+}
+
+.remove-btn:hover {
+    background: #ef4444;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Состояние "пусто" */
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: white;
+    border-radius: var(--radius-lg);
+    border: 2px dashed #e5e7eb;
+}
+
+.empty-state h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--gray);
+}
+
+.empty-state p {
+    color: var(--gray);
+    margin-bottom: 2rem;
+}
+
+.empty-state .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Демо области для примеров кода */
+.demo-area {
+    background: #f8fafc;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border: 1px solid #e5e7eb;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Адаптивность для новых стилей */
+@media (max-width: 768px) {
+    .task-grid,
+    .examples-grid,
+    .saved-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .task-card,
+    .example-card {
+        min-height: auto;
+        max-height: none;
+    }
+    
+    .saved-tabs {
+        flex-direction: column;
+        padding: 0;
+    }
+    
+    .tab-btn {
+        padding: 1rem;
+        text-align: center;
+        border-bottom: 1px solid #e5e7eb;
+        border-radius: 0;
+    }
+    
+    .tab-btn.active {
+        border-bottom: 3px solid var(--primary);
+    }
+}
+
+@media (max-width: 480px) {
+    .task-card,
+    .example-card,
+    .saved-item {
+        padding: 1.5rem;
+    }
+    
+    .code-preview,
+    .example-code-preview {
+        padding: 1rem;
+        min-height: 150px;
+    }
+    
+    .code-preview pre,
+    .example-code-preview pre {
+        font-size: 0.75rem;
+    }
+}
+
+/* Добавьте эти стили в конец файла style.css */
+
+/* Стили для работающих демо-элементов */
+.animated-box-demo {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, #3498db, #9b59b6);
+    border-radius: 10px;
+    animation: moveAndChange 3s ease-in-out infinite alternate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+@keyframes moveAndChange {
+    0% {
+        transform: translateX(0);
+        background: linear-gradient(45deg, #3498db, #9b59b6);
+    }
+    100% {
+        transform: translateX(150px);
+        background: linear-gradient(45deg, #e74c3c, #f39c12);
+    }
+}
+
+.shadow-box-demo {
+    width: 200px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1), 
+                0 6px 20px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.custom-btn-demo {
+    background: linear-gradient(to right, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-weight: 600;
+}
+
+.custom-btn-demo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+
+.custom-btn-demo:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.image-box-demo {
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: white;
+}
+
+.placeholder-img {
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(45deg, #3498db, #2ecc71);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.image-caption {
+    padding: 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+    font-style: italic;
+    border-top: 1px solid #ddd;
+    font-size: 0.9rem;
+}
+
+.main-nav-demo {
+    background-color: #2c3e50;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.main-nav-demo ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav-demo li {
+    flex: 1;
+}
+
+.main-nav-demo a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s;
+    font-size: 0.9rem;
+}
+
+.main-nav-demo a:hover {
+    background-color: #34495e;
+}
+
+.modal-demo {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content-demo {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.close-demo {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close-demo:hover {
+    color: #000;
+}
+
+/* Улучшаем отображение кода */
+.code-preview pre, .example-code-preview pre {
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin: 0;
+    tab-size: 2;
+    -moz-tab-size: 2;
+}
+
+/* Улучшаем полезные ресурсы */
+.resource-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    margin-top: auto;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--primary);
+    border-radius: var(--radius);
+    background: rgba(99, 102, 241, 0.05);
+}
+
+.resource-link:hover {
+    gap: 0.75rem;
+    color: var(--primary-dark);
+    background: rgba(99, 102, 241, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Стили для страницы добавления кода */
+.add-code-hero {
+    background: linear-gradient(135deg, var(--darker) 0%, #374151 100%);
+    color: white;
+    padding: 140px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.add-code-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+}
+
+.add-code-hero .container {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.add-code-hero h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #fff 0%, #e5e7eb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.add-code-hero p {
+    font-size: 1.25rem;
+    color: #d1d5db;
+}
+
+/* Форма добавления кода */
+.add-code-form {
+    padding: 4rem 0;
+    background: #f8fafc;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--darker);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Редактор кода в форме */
+.code-editor {
+    border: 2px solid #e5e7eb;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: #1f2937;
+}
+
+.editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: #374151;
+    color: #9ca3af;
+    font-size: 0.875rem;
+}
+
+.copy-editor-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #9ca3af;
+    border: none;
+    padding: 0.375rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.copy-editor-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+#codeContent {
+    width: 100%;
+    min-height: 300px;
+    background: #1f2937;
+    color: #e5e7eb;
+    border: none;
+    padding: 1.5rem;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    resize: vertical;
+}
+
+/* Выбор сложности */
+.difficulty-selector {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.difficulty-option {
+    cursor: pointer;
+}
+
+.difficulty-option input {
+    display: none;
+}
+
+.difficulty-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.difficulty-option input:checked + .difficulty-badge {
+    border-color: currentColor;
+    transform: scale(1.05);
+}
+
+.difficulty-badge.easy {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--secondary);
+}
+
+.difficulty-badge.medium {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--accent);
+}
+
+.difficulty-badge.hard {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+/* Кнопки формы */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+}
+
+/* Сообщество кодов */
+.community-codes {
+    padding: 4rem 0;
+    background: white;
+}
+
+.community-filters {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.filter-group label {
+    font-weight: 600;
+    color: var(--darker);
+    white-space: nowrap;
+}
+
+.filter-group select {
+    padding: 0.5rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: var(--radius);
+    background: white;
+    cursor: pointer;
+}
+
+.community-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.community-code-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+}
+
+.community-code-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.community-code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.community-code-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--darker);
+    margin: 0;
+    flex: 1;
+}
+
+.community-code-meta {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.community-code-author {
+    font-size: 0.875rem;
+    color: var(--gray);
+    font-style: italic;
+}
+
+.community-code-description {
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    line-height: 1.6;
+}
+
+.community-code-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: auto;
+}
+
+.community-code-content {
+    background: #1f2937;
+    border-radius: var(--radius);
+    padding: 1rem;
+    margin: 1rem 0;
+    overflow: hidden;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.community-code-content pre {
+    color: #e5e7eb;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+/* Чат-бот */
+.chat-bot {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+}
+
+.chat-bot-toggle {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-bot-toggle:hover {
+    transform: scale(1.1);
+}
+
+.chat-bot-window {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    width: 350px;
+    height: 500px;
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-bot-window.active {
+    display: flex;
+}
+
+.chat-bot-header {
+    background: var(--gradient);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-bot-header h3 {
+    margin: 0;
+    font-size: 1.125rem;
+}
+
+.chat-bot-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.chat-bot-messages {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.chat-message {
+    max-width: 80%;
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    line-height: 1.4;
+}
+
+.chat-message.bot {
+    background: #f1f5f9;
+    color: var(--dark);
+    align-self: flex-start;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.chat-message.user {
+    background: var(--gradient);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.chat-bot-input {
+    display: flex;
+    padding: 1rem;
+    border-top: 1px solid #e5e7eb;
+    gap: 0.5rem;
+}
+
+.chat-bot-input input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: var(--radius);
+    outline: none;
+}
+
+.chat-bot-input input:focus {
+    border-color: var(--primary);
+}
+
+.chat-bot-input button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.chat-bot-input button:hover {
+    background: var(--primary-dark);
+}
+
+/* Система рейтинга */
+.rating-system {
+    display: flex;
+    gap: 0.25rem;
+    margin: 0.5rem 0;
+}
+
+.rating-star {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: #d1d5db;
+    transition: color 0.2s ease;
+    padding: 0.125rem;
+}
+
+.rating-star:hover,
+.rating-star.active {
+    color: #f59e0b;
+}
+
+.rating-value {
+    font-size: 0.875rem;
+    color: var(--gray);
+    margin-left: 0.5rem;
+}
+
+/* Система достижений */
+.achievements-system {
+    position: fixed;
+    top: 120px; /* Было 80px - опустили на 2 см */
+    left: 2rem;
+    z-index: 999;
+}
+
+.achievements-toggle {
+    background: white;
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.75rem 1rem;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--darker);
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.achievements-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.achievements-panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 320px;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    padding: 1.5rem;
+    display: none;
+    margin-top: 0.5rem;
+}
+
+.achievements-panel.active {
+    display: block;
+}
+
+.achievement-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: var(--radius);
+    margin-bottom: 0.5rem;
+    transition: background 0.3s ease;
+}
+
+.achievement-item:hover {
+    background: #f8fafc;
+}
+
+.achievement-item.locked {
+    opacity: 0.5;
+}
+
+.achievement-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.125rem;
+    flex-shrink: 0;
+}
+
+.achievement-info {
+    flex: 1;
+}
+
+.achievement-name {
+    font-weight: 600;
+    color: var(--darker);
+    margin: 0 0 0.25rem 0;
+}
+
+.achievement-desc {
+    font-size: 0.875rem;
+    color: var(--gray);
+    margin: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 2rem 1.5rem;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .community-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .chat-bot {
+        bottom: 1rem;
+        right: 1rem;
+    }
+    
+    .chat-bot-window {
+        width: calc(100vw - 2rem);
+        right: -1rem;
+    }
+    
+    .achievements-system {
+        left: 1rem;
+        right: 1rem;
+    }
+    
+    .achievements-panel {
+        width: 100%;
+    }
+}
+
+/* Анимации */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 53%, 80%, 100% {
+        transform: translate3d(0,0,0);
+    }
+    40%, 43% {
+        transform: translate3d(0,-30px,0);
+    }
+    70% {
+        transform: translate3d(0,-15px,0);
+    }
+    90% {
+        transform: translate3d(0,-4px,0);
+    }
+}
+
+.chat-bot-window.active {
+    animation: slideInRight 0.3s ease-out;
+}
+
+.achievement-unlocked {
+    animation: bounce 0.6s ease;
+}
+
+.task-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 650px; /* Увеличили с 480px */
+    max-height: 550px; /* Увеличили с 480px */
+}
+
+/* Увеличиваем блоки кода */
+.code-preview {
+    background: #1f2937;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    overflow: hidden;
+    position: relative;
+    min-height: 200px; /* Увеличили с 180px */
+    max-height: 200px; /* Увеличили с 180px */
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+/* Улучшаем отображение кнопок */
+.task-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    flex: 1;
+    justify-content: center;
+    min-height: 44px; /* Минимальная высота для удобства клика */
+}
+
+
+/* Стили для пагинации */
+.pagination-section {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-top: 1px solid #e2e8f0;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.page-btn {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 1.125rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.page-btn:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-lg);
+}
+
+.page-btn.active {
+    background: var(--gradient);
+    color: white;
+    border-color: var(--primary);
+    transform: scale(1.1);
+}
+
+.pagination-labels {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.pagination-labels span {
+    color: var(--gray);
+    font-size: 0.875rem;
+    font-weight: 500;
+    min-width: 100px;
+}
+
+/* Адаптивность пагинации */
+@media (max-width: 768px) {
+    .pagination {
+        gap: 0.25rem;
+    }
+    
+    .page-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .pagination-labels {
+        gap: 1rem;
+    }
+    
+    .pagination-labels span {
+        min-width: 80px;
+        font-size: 0.8rem;
+    }
+}
+
+
+/* Стили для страницы сообщества */
+.community-hero {
+    background: linear-gradient(135deg, var(--darker) 0%, #374151 100%);
+    color: white;
+    padding: 140px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.community-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+}
+
+.community-hero .container {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.community-hero h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #fff 0%, #e5e7eb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.community-hero p {
+    font-size: 1.25rem;
+    color: #d1d5db;
+}
+
+/* Статистика сообщества */
+.community-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+}
+
+.community-stat {
+    text-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    min-width: 150px;
+}
+
+.community-stat .stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.community-stat .stat-label {
+    color: var(--gray);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Лента сообщества */
+.community-feed {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.community-code-item {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.community-code-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.community-code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.community-code-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--darker);
+    margin: 0;
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.community-code-meta {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.community-code-author {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.community-code-date {
+    color: var(--gray);
+    font-size: 0.875rem;
+}
+
+.community-code-description {
+    color: var(--dark);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.community-code-stats {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.community-code-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--gray);
+    font-size: 0.875rem;
+}
+
+.community-code-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+/* Адаптивность сообщества */
+@media (max-width: 768px) {
+    .community-stats {
+        gap: 1rem;
+    }
+    
+    .community-stat {
+        padding: 1.5rem;
+        min-width: 120px;
+    }
+    
+    .community-stat .stat-number {
+        font-size: 2rem;
+    }
+    
+    .community-feed {
+        grid-template-columns: 1fr;
+    }
+    
+    .community-code-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .community-code-actions {
+        flex-direction: column;
+    }
+}
+
+/* Стили для умного поиска */
+.search-result-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary);
+}
+
+[data-theme="dark"] .search-result-card {
+    background: #1e293b;
+}
+
+.search-result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.search-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.search-badge.курс {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--secondary);
+}
+
+.search-badge.интенсив {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--accent);
+}
+
+.search-result-meta {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.search-result-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+/* Стили для улучшенного чат-бота */
+.chat-bot-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.clear-chat {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.clear-chat:hover {
+    opacity: 1;
+}
+
+.quick-questions {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-top: 1px solid #e5e7eb;
+    flex-wrap: wrap;
+}
+
+[data-theme="dark"] .quick-questions {
+    border-top-color: #374151;
+}
+
+.quick-question {
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--primary);
+    white-space: nowrap;
+}
+
+.quick-question:hover {
+    background: rgba(99, 102, 241, 0.2);
+    transform: translateY(-1px);
+}
+
+.message-time {
+    font-size: 0.7rem;
+    opacity: 0.6;
+    margin-top: 0.25rem;
+    text-align: right;
+}
+
+/* Стили для модального окна успеха */
+.success-modal {
+    text-align: center;
+    max-width: 500px;
+}
+
+.success-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: bounce 1s ease;
+}
+
+.success-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Анимации */
+@keyframes bounce {
+    0%, 20%, 53%, 80%, 100% {
+        transform: translate3d(0,0,0);
+    }
+    40%, 43% {
+        transform: translate3d(0,-30px,0);
+    }
+    70% {
+        transform: translate3d(0,-15px,0);
+    }
+    90% {
+        transform: translate3d(0,-4px,0);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .theme-switcher {
+        top: 80px;
+        right: 1rem;
+    }
+    
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+    
+    .success-actions {
+        flex-direction: column;
+    }
+    
+    .search-result-actions {
+        flex-direction: column;
+    }
+    
+    .quick-questions {
+        flex-direction: column;
+    }
+}
+
+/* Стили для админ-панели */
+.admin-hero {
+    background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+    color: white;
+    padding: 120px 0 60px;
+}
+
+.admin-hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.admin-login {
+    padding: 4rem 0;
+    background: #f8fafc;
+}
+
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.login-hint {
+    color: var(--gray);
+    font-size: 0.875rem;
+    margin-top: 1rem;
+}
+
+.admin-panel {
+    padding: 2rem 0;
+    background: #f8fafc;
+    min-height: 80vh;
+}
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.admin-stat {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.admin-stat .stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.admin-tabs {
+    display: flex;
+    background: white;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    padding: 0;
+    margin-bottom: 0;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.admin-tab-btn {
+    background: none;
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--gray);
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.admin-tab-btn.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+.admin-tab-content {
+    display: none;
+    background: white;
+    padding: 2rem;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.admin-tab-content.active {
+    display: block;
+}
+
+.admin-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-task-item, .admin-code-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.admin-task-item:hover, .admin-code-item:hover {
+    box-shadow: var(--shadow);
+}
+
+.task-info, .code-info {
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.task-meta, .code-meta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--gray);
+}
+
+.task-actions, .code-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.settings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.setting-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    border: 1px solid #e5e7eb;
+}
+
+.setting-card h4 {
+    margin-bottom: 0.5rem;
+    color: var(--darker);
+}
+
+.setting-card p {
+    color: var(--gray);
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+}
+
+.btn-danger {
+    background: #ef4444;
+    color: white;
+    border: none;
+}
+
+.btn-danger:hover {
+    background: #dc2626;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: var(--gray);
+}
+
+/* Адаптивность админки */
+@media (max-width: 768px) {
+    .admin-task-item, .admin-code-item {
+        flex-direction: column;
+    }
+    
+    .task-actions, .code-actions {
+        margin-top: 1rem;
+        width: 100%;
+    }
+    
+    .task-actions .btn, .code-actions .btn {
+        flex: 1;
+    }
+    
+    .admin-tabs {
+        flex-direction: column;
+    }
+    
+    .admin-section-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+}
+
+/* Улучшенная адаптивность для маленьких экранов */
+@media (max-width: 480px) {
+    /* Хедер и навигация */
+    .header-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+    
+    nav a {
+        display: block;
+        text-align: center;
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .logo-text h1 {
+        font-size: 1.25rem;
+    }
+    
+    .logo-text span {
+        font-size: 0.7rem;
+    }
+    
+    /* Герой секция */
+    .hero {
+        padding: 120px 0 40px;
+    }
+    
+    .hero h2 {
+        font-size: 1.75rem;
+        line-height: 1.3;
+    }
+    
+    .hero p {
+        font-size: 0.9rem;
+        padding: 0 1rem;
+    }
+    
+    .hero-badges {
+        gap: 0.5rem;
+    }
+    
+    .badge {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .hero-stats {
+        gap: 1rem;
+        flex-direction: column;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    /* Поиск */
+    .search-box {
+        flex-direction: column;
+    }
+    
+    .search-box input {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    
+    .search-box button {
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+    
+    /* Карточки задач */
+    .task-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .task-card {
+        padding: 1.5rem;
+        min-height: auto;
+        max-height: none;
+    }
+    
+    .task-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .task-card p {
+        font-size: 0.9rem;
+    }
+    
+    .code-preview {
+        padding: 1rem;
+        min-height: 150px;
+        max-height: 150px;
+    }
+    
+    .code-preview pre {
+        font-size: 0.7rem;
+    }
+    
+    .task-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        padding: 0.875rem 1rem;
+        font-size: 0.9rem;
+        min-height: 48px;
+    }
+    
+    /* Рейтинг */
+    .rating-system {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .rating-value {
+        display: block;
+        margin: 0.5rem 0 0 0;
+        width: 100%;
+    }
+    
+    /* Ресурсы */
+    .resources-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .resource-card {
+        padding: 1.5rem;
+    }
+    
+    .resource-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    /* Пагинация */
+    .pagination {
+        gap: 0.25rem;
+    }
+    
+    .page-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .pagination-labels {
+        gap: 0.5rem;
+    }
+    
+    .pagination-labels span {
+        min-width: 60px;
+        font-size: 0.7rem;
+    }
+    
+    /* Формы */
+    .form-container {
+        padding: 1.5rem;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: 0.875rem;
+        font-size: 1rem;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    /* Чат-бот */
+    .chat-bot {
+        bottom: 1rem;
+        right: 1rem;
+    }
+    
+    .chat-bot-window {
+        width: calc(100vw - 2rem);
+        height: 70vh;
+        right: -1rem;
+    }
+    
+    .chat-message {
+        max-width: 90%;
+        font-size: 0.9rem;
+    }
+    
+    /* Достижения */
+    .achievements-system {
+        top: 70px;
+        left: 1rem;
+    }
+    
+    .achievements-panel {
+        width: calc(100vw - 2rem);
+    }
+    
+    /* Переключатель темы */
+    .theme-switcher {
+        top: 70px;
+        right: 1rem;
+    }
+    
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+    
+    /* Сообщество */
+    .community-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .community-code-card {
+        padding: 1.5rem;
+    }
+    
+    .community-code-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .community-code-actions {
+        flex-direction: column;
+    }
+    
+    /* Футер */
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    /* Модальные окна */
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        padding: 1.5rem;
+    }
+    
+    .modal-solution h2 {
+        font-size: 1.5rem;
+    }
+    
+    .modal-solution h3 {
+        font-size: 1.25rem;
+    }
+    
+    /* Админка */
+    .admin-tabs {
+        flex-direction: column;
+    }
+    
+    .admin-tab-btn {
+        padding: 0.875rem 1rem;
+        text-align: center;
+    }
+    
+    .admin-section-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .admin-task-item,
+    .admin-code-item {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .task-actions,
+    .code-actions {
+        width: 100%;
+    }
+    
+    .task-actions .btn,
+    .code-actions .btn {
+        flex: 1;
+    }
+}
+
+/* Дополнительные исправления для очень маленьких экранов */
+@media (max-width: 360px) {
+    .container {
+        width: 95%;
+        padding: 0 10px;
+    }
+    
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .task-card,
+    .resource-card,
+    .community-code-card {
+        padding: 1rem;
+    }
+    
+    .btn {
+        font-size: 0.85rem;
+        padding: 0.75rem 0.5rem;
+    }
+    
+    /* Улучшаем читаемость кода на маленьких экранах */
+    .code-preview pre {
+        font-size: 0.65rem;
+        line-height: 1.3;
+    }
+    
+    /* Убираем лишние отступы */
+    .hero,
+    .tasks,
+    .resources,
+    .add-code-form,
+    .community-codes {
+        padding: 2rem 0;
+    }
+}
+
+/* Исправления для горизонтальной ориентации на телефонах */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        padding: 100px 0 2rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+    
+    .chat-bot-window {
+        height: 60vh;
+    }
+    
+    .modal-content {
+        margin: 5% auto;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+}
+
+/* Улучшения для планшетов */
+@media (min-width: 481px) and (max-width: 768px) {
+    .task-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .resources-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .community-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .header-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    nav ul {
+        gap: 1rem;
+    }
+}
+
+/* Улучшения для тач-устройств */
+@media (hover: none) and (pointer: coarse) {
+    /* Увеличиваем область клика для тач-устройств */
+    .btn, 
+    .rating-star, 
+    .copy-btn, 
+    nav a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Убираем ховер-эффекты на тач-устройствах */
+    .task-card:hover,
+    .resource-card:hover,
+    .community-code-card:hover {
+        transform: none;
+    }
+    
+    /* Улучшаем скролл */
+    .code-preview pre {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Исправления для Safari на iOS */
+@supports (-webkit-touch-callout: none) {
+    .hero {
+        background-attachment: scroll;
+    }
+    
+    .code-preview pre {
+        padding-bottom: 1rem;
+    }
+}
+
+/* Улучшаем читаемость текста на всех устройствах */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Гарантируем, что контент не выходит за пределы экрана */
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Улучшаем скроллбар для вебкит браузеров */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: #374151;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: #6b7280;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+/* Стиль для таблицы */
+table {
+    width: 100%; /* Таблица будет занимать всю доступную ширину */
+    border-collapse: collapse; /* Убирает двойные границы между ячейками */
+}
+
+/* Стиль для ячеек таблицы */
+td {
+    border: 1px solid #ddd; /* Добавляет легкую границу для ячеек */
+    padding: 12px; /* Добавляет внутренние отступы для текста */
+    text-align: center; /* Выравнивает текст по центру */
+}
+
+/* Опционально: Сделать кнопки блочными для лучшего нажатия на телефоне */
+td a { 
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+
+/* Основные стили для таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Важно для мобильных устройств */
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    word-wrap: break-word; /* Перенос длинных слов */
+    overflow-wrap: break-word; /* Современная альтернатива */
+}
+
+/* Для очень маленьких экранов */
+@media screen and (max-width: 480px) {
+    td {
+        padding: 10px 5px; /* Уменьшаем отступы */
+        font-size: 14px; /* Немного уменьшаем шрифт */
+    }
+}
+
+/* Альтернативное решение - сделать таблицу скроллящейся на маленьких экранах */
+@media screen and (max-width: 600px) {
+    .table-container {
+        overflow-x: auto; /* Добавляет горизонтальный скролл только для таблицы */
+        width: 100%;
+    }
+    
+    table {
+        min-width: 400px; /* Минимальная ширина таблицы */
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Скрывает горизонтальную прокрутку */
+}
