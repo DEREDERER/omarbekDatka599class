@@ -6,6 +6,634 @@
     <title>Примеры кода - InfoClass</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* БАЗОВЫЕ СТИЛИ ДЛЯ ПРИМЕРОВ */
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .example-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid #e2e8f0;
+        }
+
+        .example-actions {
+            margin-top: 20px;
+            display: block !important; /* ФИКС для кнопок */
+            text-align: center;
+        }
+
+        .save-code-btn {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+            min-width: 160px;
+        }
+
+        .save-code-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        /* ДЕМО ЭЛЕМЕНТЫ */
+        .animated-box-demo {
+            width: 100px;
+            height: 100px;
+            background-color: #3b82f6;
+            animation: moveAndChange 3s infinite alternate;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            border-radius: 12px;
+            margin: 0 auto;
+        }
+
+        @keyframes moveAndChange {
+            0% {
+                transform: translateX(0);
+                background-color: #3b82f6;
+            }
+            100% {
+                transform: translateX(200px);
+                background-color: #ef4444;
+            }
+        }
+
+        .shadow-box-demo {
+            width: 200px;
+            height: 100px;
+            background-color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            padding: 20px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        .custom-btn-demo {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+            margin: 0 auto;
+            display: block;
+        }
+
+        .custom-btn-demo:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(139, 92, 246, 0.4);
+        }
+
+        .image-box-demo {
+            width: 280px;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin: 0 auto;
+        }
+
+        .placeholder-img {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #f1f5f9, #cbd5e1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .image-caption {
+            padding: 15px;
+            background-color: white;
+            text-align: center;
+            font-style: italic;
+            color: #475569;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .main-nav-demo {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        .main-nav-demo ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .main-nav-demo li {
+            flex: 1;
+        }
+
+        .main-nav-demo a {
+            display: block;
+            padding: 15px 20px;
+            color: #cbd5e1;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .main-nav-demo a:hover {
+            background-color: rgba(255,255,255,0.05);
+            color: white;
+        }
+
+        .main-nav-demo a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: #3b82f6;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .main-nav-demo a:hover::after {
+            width: 70%;
+        }
+
+        /* МОДАЛЬНОЕ ОКНО */
+        .modal-demo {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content-demo {
+            background: linear-gradient(135deg, white, #f8fafc);
+            margin: 15% auto;
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .close-demo {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #64748b;
+            transition: color 0.3s;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .close-demo:hover {
+            color: #ef4444;
+            background: #f1f5f9;
+        }
+
+        /* УЛУЧШЕННЫЙ ДИЗАЙН ПРОГРЕССА */
+        .gamification-section {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 80px 0;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gamification-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                #3b82f6, 
+                #8b5cf6, 
+                #ec4899, 
+                #f59e0b, 
+                #10b981);
+        }
+
+        .progress-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+        }
+
+        .user-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .user-info h3 {
+            margin: 0 0 5px 0;
+            font-size: 24px;
+            color: #f8fafc;
+        }
+
+        .user-info p {
+            margin: 0;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .level-display {
+            background: linear-gradient(135deg, #f59e0b, #f97316);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .xp-progress-container {
+            margin: 30px 0;
+        }
+
+        .xp-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .xp-amount {
+            font-weight: 600;
+            color: #f8fafc;
+        }
+
+        .xp-needed {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .progress-bar-container {
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            border-radius: 10px;
+            transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.3), 
+                transparent);
+            animation: shine 2s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .achievements-section {
+            margin: 50px 0;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            font-size: 22px;
+            color: #f8fafc;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .achievement-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .achievement-card.unlocked {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .achievement-card.unlocked .achievement-icon {
+            transform: scale(1.1);
+        }
+
+        .achievement-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            display: block;
+            transition: transform 0.3s;
+        }
+
+        .achievement-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #f8fafc;
+        }
+
+        .achievement-desc {
+            font-size: 13px;
+            color: #94a3b8;
+            line-height: 1.4;
+        }
+
+        .locked-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(239, 68, 68, 0.2);
+            color: #fca5a5;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        /* ИНТЕРАКТИВНЫЙ РЕДАКТОР */
+        .interactive-editor {
+            background: rgba(15, 23, 42, 0.8);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 50px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .editor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .editor-header h3 {
+            margin: 0;
+            color: #f8fafc;
+            font-size: 22px;
+        }
+
+        .editor-tabs {
+            display: flex;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px;
+            border-radius: 12px;
+        }
+
+        .editor-tab {
+            background: transparent;
+            border: none;
+            color: #94a3b8;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .editor-tab.active {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .code-editor-area {
+            background: #0f172a;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .code-editor {
+            width: 100%;
+            height: 250px;
+            background: #0f172a;
+            color: #e2e8f0;
+            border: none;
+            padding: 20px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            resize: vertical;
+            outline: none;
+        }
+
+        .editor-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .run-btn {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .run-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+        }
+
+        .run-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .editor-preview {
+            margin-top: 30px;
+            padding: 30px;
+            background: white;
+            border-radius: 16px;
+            min-height: 150px;
+            border: 2px dashed #e2e8f0;
+        }
+
+        /* ЗАДАНИЯ */
+        .challenges-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .challenge-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+
+        .challenge-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .challenge-item.completed {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid #10b981;
+        }
+
+        .challenge-info h4 {
+            margin: 0 0 5px 0;
+            color: #f8fafc;
+        }
+
+        .challenge-info p {
+            margin: 0;
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        .challenge-reward {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* УВЕДОМЛЕНИЯ */
+        .notification {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(16, 185, 129, 0.3);
+            transform: translateX(400px);
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 1000;
+            max-width: 300px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -18,14 +646,14 @@
                 </div>
             </div>
             <nav>
-    <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="2str.html">Примеры кода</a></li>
-        <li><a href="3str.html">Сохранённое</a></li>
-        <li><a href="4str.html">Добавить код</a></li>
-        <li><a href="community.html">Сообщество</a></li>
-    </ul>
-</nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="2str.html">Примеры кода</a></li>
+                    <li><a href="3str.html">Сохранённое</a></li>
+                    <li><a href="4str.html">Добавить код</a></li>
+                    <li><a href="community.html">Сообщество</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -134,6 +762,7 @@
                     </div>
                 </div>
 
+                <!-- Остальные 4 примера остаются без изменений -->
                 <!-- Пример 3 - Кнопка -->
                 <div class="example-card">
                     <h3>3. Создание интерактивной кнопки</h3>
@@ -403,7 +1032,7 @@ window.onclick = function(event) {
                     </div>
                     
                     <div class="demo-area">
-                        <button id="openModalDemo">Открыть окно</button>
+                        <button id="openModalDemo" class="custom-btn-demo">Открыть окно</button>
                         <div id="myModalDemo" class="modal-demo">
                             <div class="modal-content-demo">
                                 <span class="close-demo">&times;</span>
@@ -417,6 +1046,181 @@ window.onclick = function(event) {
                         <button class="btn btn-primary save-code-btn" data-example="6">
                             <span>💾</span> Сохранить код
                         </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- УЛУЧШЕННЫЙ РАЗДЕЛ ПРОГРЕССА -->
+    <section class="gamification-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 50px; color: white; font-size: 36px;">
+                🎮 Твой прогресс в обучении
+            </h2>
+            
+            <!-- Карточка прогресса -->
+            <div class="progress-card">
+                <div class="user-header">
+                    <div class="user-info">
+                        <h3>Привет, Программист! 👋</h3>
+                        <p>Продолжай изучать код и повышай свой уровень</p>
+                    </div>
+                    <div class="level-display">
+                        <span>⭐ Уровень</span>
+                        <span id="user-level">1</span>
+                    </div>
+                </div>
+                
+                <div class="xp-progress-container">
+                    <div class="xp-header">
+                        <div class="xp-amount">
+                            <span id="current-xp">0</span> XP
+                        </div>
+                        <div class="xp-needed">
+                            До следующего уровня: <span id="next-level-xp">100</span> XP
+                        </div>
+                    </div>
+                    
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill" id="xp-progress-bar"></div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px; color: #94a3b8; font-size: 14px;">
+                    💡 Совет: Изучай примеры, сохраняй код и экспериментируй в редакторе
+                </div>
+            </div>
+
+            <!-- Достижения -->
+            <div class="achievements-section">
+                <div class="section-title">
+                    <span>🏆</span>
+                    <h3>Достижения</h3>
+                </div>
+                <div class="achievements-grid">
+                    <div class="achievement-card" id="achievement-1">
+                        <div class="achievement-icon">📚</div>
+                        <div class="achievement-title">Первый шаг</div>
+                        <div class="achievement-desc">Изучи свой первый пример кода</div>
+                        <div class="locked-badge">🔓 Открыто</div>
+                    </div>
+                    
+                    <div class="achievement-card locked" id="achievement-2">
+                        <div class="achievement-icon">💾</div>
+                        <div class="achievement-title">Коллекционер</div>
+                        <div class="achievement-desc">Сохрани 5 примеров кода</div>
+                        <div class="locked-badge">🔒 Заблокировано</div>
+                    </div>
+                    
+                    <div class="achievement-card locked" id="achievement-3">
+                        <div class="achievement-icon">🎨</div>
+                        <div class="achievement-title">CSS Мастер</div>
+                        <div class="achievement-desc">Изучи все CSS примеры</div>
+                        <div class="locked-badge">🔒 Заблокировано</div>
+                    </div>
+                    
+                    <div class="achievement-card locked" id="achievement-4">
+                        <div class="achievement-icon">⚡</div>
+                        <div class="achievement-title">Скоростной</div>
+                        <div class="achievement-desc">Изучи 3 примера за один день</div>
+                        <div class="locked-badge">🔒 Заблокировано</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Интерактивный редактор -->
+            <div class="interactive-editor">
+                <div class="editor-header">
+                    <h3>🛠️ Интерактивная площадка</h3>
+                    <div class="editor-tabs">
+                        <button class="editor-tab active" data-tab="html">HTML</button>
+                        <button class="editor-tab" data-tab="css">CSS</button>
+                        <button class="editor-tab" data-tab="js">JavaScript</button>
+                    </div>
+                </div>
+                
+                <p style="color: #94a3b8; margin-bottom: 25px; line-height: 1.6;">
+                    Попробуй изменить код и посмотри на результат! Экспериментируй с HTML, CSS и JavaScript.
+                    <br><small>Получи XP только за первый запуск в день</small>
+                </p>
+                
+                <div class="code-editor-area">
+                    <textarea class="code-editor" id="interactive-editor" placeholder="Начни писать код здесь...">
+<!-- Напиши свой HTML код -->
+<div class="my-element">
+    <h1>Привет, мир!</h1>
+    <button onclick="changeText()">Нажми меня</button>
+</div>
+
+<style>
+.my-element {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+    border-radius: 16px;
+    font-family: 'Inter', sans-serif;
+}
+</style>
+
+<script>
+function changeText() {
+    const h1 = document.querySelector('.my-element h1');
+    h1.textContent = 'Код работает! 🎉';
+    h1.style.color = '#10b981';
+}
+</script>
+                    </textarea>
+                    
+                    <div class="editor-actions">
+                        <div style="color: #94a3b8; font-size: 13px;">
+                            ⚡ Доступно опыта: <span id="editor-xp-available">25 XP</span>
+                        </div>
+                        <button class="run-btn" id="run-code-btn" onclick="runCode()">
+                            <span>▶</span> Запустить код
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="editor-preview" id="editor-preview">
+                    <!-- Здесь будет отображаться результат -->
+                </div>
+            </div>
+
+            <!-- Задания -->
+            <div class="challenges-section">
+                <div class="section-title">
+                    <span>📋</span>
+                    <h3>Ежедневные задания</h3>
+                </div>
+                
+                <div class="challenge-item" id="challenge-1">
+                    <div class="challenge-info">
+                        <h4>Изучи один пример кода</h4>
+                        <p>Прокрути страницу до любого примера</p>
+                    </div>
+                    <div class="challenge-reward">
+                        <span>+</span><span>10 XP</span>
+                    </div>
+                </div>
+                
+                <div class="challenge-item" id="challenge-2">
+                    <div class="challenge-info">
+                        <h4>Сохрани код к себе</h4>
+                        <p>Используй кнопку "Сохранить код" в примерах</p>
+                    </div>
+                    <div class="challenge-reward">
+                        <span>+</span><span>15 XP</span>
+                    </div>
+                </div>
+                
+                <div class="challenge-item" id="challenge-3">
+                    <div class="challenge-info">
+                        <h4>Создай что-то в редакторе</h4>
+                        <p>Напиши свой код и запусти его</p>
+                    </div>
+                    <div class="challenge-reward">
+                        <span>+</span><span>25 XP</span>
                     </div>
                 </div>
             </div>
@@ -451,19 +1255,309 @@ window.onclick = function(event) {
         </div>
     </footer>
 
-    <div class="table-container">
-    <table>
-        <tr>
-            <td>HTML/CSS</td>
-            <td>JavaScript</td>
-        </tr>
-        <tr>
-            <td>Python</td>
-            <td>Алгоритмы</td>
-        </tr>
-    </table>
-</div>
+    <!-- Уведомление -->
+    <div class="notification" id="xp-notification">
+        <div style="display: flex; align-items: center;">
+            <div class="notification-icon" id="notification-icon">🎉</div>
+            <div>
+                <strong id="notification-title">+10 XP!</strong>
+                <div id="notification-desc">Продолжайте в том же духе!</div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
+    
+    <!-- УЛУЧШЕННЫЙ СКРИПТ ДЛЯ СИСТЕМЫ ГЕЙМИФИКАЦИИ -->
+    <script>
+        // Улучшенная система пользователя
+        let userData = {
+            level: 1,
+            xp: 0,
+            savedCodes: 0,
+            studiedExamples: [],
+            achievements: ['first_step'],
+            dailyTasks: {
+                runCode: { done: false, date: null },
+                saveCode: { count: 0, date: null },
+                studyExample: { count: 0, date: null }
+            },
+            lastStudyDate: null
+        };
+
+        // Загрузка данных
+        function loadUserData() {
+            const saved = localStorage.getItem('infoClassUserData');
+            if (saved) {
+                const parsed = JSON.parse(saved);
+                userData = parsed;
+                updateProgressDisplay();
+                updateAchievements();
+                updateDailyTasks();
+            }
+        }
+
+        // Сохранение данных
+        function saveUserData() {
+            localStorage.setItem('infoClassUserData', JSON.stringify(userData));
+        }
+
+        // Проверка нового дня
+        function checkNewDay() {
+            const today = new Date().toDateString();
+            if (userData.dailyTasks.runCode.date !== today) {
+                userData.dailyTasks.runCode.done = false;
+                userData.dailyTasks.runCode.date = today;
+                userData.dailyTasks.saveCode.count = 0;
+                userData.dailyTasks.saveCode.date = today;
+                userData.dailyTasks.studyExample.count = 0;
+                userData.dailyTasks.studyExample.date = today;
+                saveUserData();
+                updateDailyTasks();
+            }
+        }
+
+        // Обновление прогресса
+        function updateProgressDisplay() {
+            document.getElementById('user-level').textContent = userData.level;
+            document.getElementById('current-xp').textContent = userData.xp;
+            
+            const xpForNextLevel = userData.level * 100;
+            document.getElementById('next-level-xp').textContent = xpForNextLevel;
+            
+            const progressPercent = Math.min((userData.xp / xpForNextLevel) * 100, 100);
+            document.getElementById('xp-progress-bar').style.width = progressPercent + '%';
+            
+            // Обновляем доступный XP в редакторе
+            const editorXPAvailable = userData.dailyTasks.runCode.done ? 0 : 25;
+            document.getElementById('editor-xp-available').textContent = editorXPAvailable + ' XP';
+            document.getElementById('run-code-btn').disabled = userData.dailyTasks.runCode.done;
+        }
+
+        // Добавление XP с защитой от накрутки
+        function addXP(amount, reason, type) {
+            const today = new Date().toDateString();
+            
+            // Проверяем лимиты
+            if (type === 'runCode' && userData.dailyTasks.runCode.done) {
+                showNotification('⚠️', 'Опыт за запуск кода можно получить только 1 раз в день!', 'warning');
+                return;
+            }
+            
+            if (type === 'saveCode') {
+                if (userData.dailyTasks.saveCode.count >= 5) {
+                    showNotification('⚠️', 'Лимит сохранений на сегодня исчерпан!', 'warning');
+                    return;
+                }
+                userData.dailyTasks.saveCode.count++;
+            }
+            
+            if (type === 'studyExample') {
+                if (userData.dailyTasks.studyExample.count >= 10) {
+                    return;
+                }
+                userData.dailyTasks.studyExample.count++;
+            }
+            
+            // Добавляем XP
+            userData.xp += amount;
+            
+            // Проверка уровня
+            const xpForNextLevel = userData.level * 100;
+            if (userData.xp >= xpForNextLevel) {
+                userData.level++;
+                showNotification('🎉', `Поздравляем! Вы достигли уровня ${userData.level}!`, 'level');
+            }
+            
+            // Отмечаем выполнение
+            if (type === 'runCode') {
+                userData.dailyTasks.runCode.done = true;
+                userData.dailyTasks.runCode.date = today;
+            }
+            
+            showNotification('⭐', `+${amount} XP! ${reason}`, 'xp');
+            updateProgressDisplay();
+            updateDailyTasks();
+            saveUserData();
+        }
+
+        // Показать уведомление
+        function showNotification(icon, message, type = 'xp') {
+            const notification = document.getElementById('xp-notification');
+            const notificationIcon = document.getElementById('notification-icon');
+            const notificationTitle = document.getElementById('notification-title');
+            const notificationDesc = document.getElementById('notification-desc');
+            
+            notificationIcon.textContent = icon;
+            notificationTitle.textContent = message.split('!')[0] + '!';
+            notificationDesc.textContent = message.split('!')[1] || 'Продолжайте в том же духе!';
+            
+            // Разные цвета для разных типов уведомлений
+            if (type === 'level') {
+                notification.style.background = 'linear-gradient(135deg, #f59e0b, #d97706)';
+            } else if (type === 'warning') {
+                notification.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+            } else {
+                notification.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            }
+            
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        // Обновление достижений
+        function updateAchievements() {
+            // Первый шаг
+            const ach1 = document.getElementById('achievement-1');
+            if (userData.studiedExamples.length > 0) {
+                ach1.classList.remove('locked');
+                ach1.classList.add('unlocked');
+                ach1.querySelector('.locked-badge').textContent = '🔓 Открыто';
+            }
+            
+            // Коллекционер
+            const ach2 = document.getElementById('achievement-2');
+            if (userData.savedCodes >= 5) {
+                ach2.classList.remove('locked');
+                ach2.classList.add('unlocked');
+                ach2.querySelector('.locked-badge').textContent = '🔓 Открыто';
+            }
+            
+            // CSS Мастер
+            const ach3 = document.getElementById('achievement-3');
+            const cssExamples = userData.studiedExamples.filter(exp => 
+                exp.includes('CSS') || exp.includes('анимация') || exp.includes('тени')
+            );
+            if (cssExamples.length >= 3) {
+                ach3.classList.remove('locked');
+                ach3.classList.add('unlocked');
+                ach3.querySelector('.locked-badge').textContent = '🔓 Открыто';
+            }
+        }
+
+        // Обновление ежедневных заданий
+        function updateDailyTasks() {
+            const today = new Date().toDateString();
+            
+            // Задание 1: Изучение примеров
+            const challenge1 = document.getElementById('challenge-1');
+            if (userData.dailyTasks.studyExample.count > 0 && userData.dailyTasks.studyExample.date === today) {
+                challenge1.classList.add('completed');
+            }
+            
+            // Задание 2: Сохранение кода
+            const challenge2 = document.getElementById('challenge-2');
+            if (userData.dailyTasks.saveCode.count > 0 && userData.dailyTasks.saveCode.date === today) {
+                challenge2.classList.add('completed');
+            }
+            
+            // Задание 3: Запуск кода
+            const challenge3 = document.getElementById('challenge-3');
+            if (userData.dailyTasks.runCode.done && userData.dailyTasks.runCode.date === today) {
+                challenge3.classList.add('completed');
+            }
+        }
+
+        // Запуск кода в редакторе
+        function runCode() {
+            const code = document.getElementById('interactive-editor').value;
+            const preview = document.getElementById('editor-preview');
+            const runBtn = document.getElementById('run-code-btn');
+            
+            if (userData.dailyTasks.runCode.done) {
+                showNotification('⚠️', 'Вы уже получили XP за запуск кода сегодня!', 'warning');
+                return;
+            }
+            
+            try {
+                preview.innerHTML = code;
+                addXP(25, 'За эксперимент с кодом!', 'runCode');
+                runBtn.disabled = true;
+                runBtn.innerHTML = '<span>✅</span> Выполнено';
+            } catch (error) {
+                preview.innerHTML = `<div style="color: #ef4444; padding: 20px; background: #fef2f2; border-radius: 8px;">
+                    <strong>Ошибка:</strong> ${error.message}
+                </div>`;
+            }
+        }
+
+        // Функции для модального окна
+        function initModal() {
+            const modal = document.getElementById('myModalDemo');
+            const btn = document.getElementById('openModalDemo');
+            const span = document.getElementsByClassName('close-demo')[0];
+
+            if (btn && modal && span) {
+                btn.onclick = function() {
+                    modal.style.display = 'block';
+                }
+
+                span.onclick = function() {
+                    modal.style.display = 'none';
+                }
+
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = 'none';
+                    }
+                }
+            }
+        }
+
+        // Инициализация
+        document.addEventListener('DOMContentLoaded', function() {
+            loadUserData();
+            checkNewDay();
+            initModal();
+            
+            // Кнопки сохранения кода
+            document.querySelectorAll('.save-code-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const exampleId = this.getAttribute('data-example');
+                    userData.savedCodes++;
+                    addXP(15, 'Сохранение кода!', 'saveCode');
+                    updateAchievements();
+                    saveUserData();
+                    
+                    // Визуальная обратная связь
+                    this.innerHTML = '<span>✅</span> Сохранено!';
+                    this.style.background = 'linear-gradient(135deg, #6b7280, #4b5563)';
+                    setTimeout(() => {
+                        this.innerHTML = '<span>💾</span> Сохранить код';
+                        this.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+                    }, 1500);
+                });
+            });
+            
+            // Вкладки редактора
+            document.querySelectorAll('.editor-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    document.querySelectorAll('.editor-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Отслеживание изучения примеров
+            const exampleCards = document.querySelectorAll('.example-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const exampleTitle = entry.target.querySelector('h3').textContent;
+                        if (!userData.studiedExamples.includes(exampleTitle)) {
+                            userData.studiedExamples.push(exampleTitle);
+                            addXP(10, 'Изучение примера!', 'studyExample');
+                            updateAchievements();
+                            saveUserData();
+                        }
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            exampleCards.forEach(card => observer.observe(card));
+        });
+    </script>
 </body>
 </html>

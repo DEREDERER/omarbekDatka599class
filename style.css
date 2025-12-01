@@ -590,7 +590,7 @@ nav a.active::after {
 footer {
   background: var(--darker);
   color: white;
-  padding: 3rem 0 1rem;
+  padding: rem 0 1rem;
 }
 
 .footer-content {
@@ -3314,69 +3314,3 @@ img, video, iframe {
     background: #9ca3af;
 }
 
-/* Стиль для таблицы */
-table {
-    width: 100%; /* Таблица будет занимать всю доступную ширину */
-    border-collapse: collapse; /* Убирает двойные границы между ячейками */
-}
-
-/* Стиль для ячеек таблицы */
-td {
-    border: 1px solid #ddd; /* Добавляет легкую границу для ячеек */
-    padding: 12px; /* Добавляет внутренние отступы для текста */
-    text-align: center; /* Выравнивает текст по центру */
-}
-
-/* Опционально: Сделать кнопки блочными для лучшего нажатия на телефоне */
-td a { 
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: inherit;
-    font-weight: bold;
-}
-
-/* Основные стили для таблицы */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed; /* Важно для мобильных устройств */
-}
-
-td {
-    border: 1px solid #ddd;
-    padding: 15px;
-    text-align: center;
-    word-wrap: break-word; /* Перенос длинных слов */
-    overflow-wrap: break-word; /* Современная альтернатива */
-}
-
-/* Для очень маленьких экранов */
-@media screen and (max-width: 480px) {
-    td {
-        padding: 10px 5px; /* Уменьшаем отступы */
-        font-size: 14px; /* Немного уменьшаем шрифт */
-    }
-}
-
-/* Альтернативное решение - сделать таблицу скроллящейся на маленьких экранах */
-@media screen and (max-width: 600px) {
-    .table-container {
-        overflow-x: auto; /* Добавляет горизонтальный скролл только для таблицы */
-        width: 100%;
-    }
-    
-    table {
-        min-width: 400px; /* Минимальная ширина таблицы */
-    }
-}
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Скрывает горизонтальную прокрутку */
-}
